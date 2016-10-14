@@ -67,6 +67,8 @@
     NSMutableString *urlString = [[NSMutableString alloc] initWithString:request.hostURLString];
     NSString *appendUrlString = [[NSString alloc] init];
     
+    self.manager.requestSerializer.timeoutInterval = request.timeoutInterval;
+    
     if (request.URLString) {
         appendUrlString = request.URLString;
     } else {
