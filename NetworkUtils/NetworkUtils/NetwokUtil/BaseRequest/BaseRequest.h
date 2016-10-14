@@ -15,22 +15,38 @@ typedef void (^RequestFailureBlock) (NSInteger errorCode, id responseObject);
 
 @interface BaseRequest : NSObject
 {
-    /* 用来做解析的类 */
     BaseResponse * _responseParser;
 }
-/* 主机地址 */
 @property (nonatomic, copy) NSString *hostURLString;
-/* 接口地址 */
 @property (nonatomic, copy) NSString *URLString;
-/* 接口参数 */
 @property (nonatomic, strong) id parameters;
-/* 借口请求方式 */
 @property (nonatomic, copy) NSString *httpMethod;
-/* NSURLSessionDataTask */
+@property (nonatomic, assign) NSTimeInterval timeoutInterval;
 @property (nonatomic, strong) NSURLSessionDataTask *dataTask;
-/* 请求成功的回调 */
 @property (nonatomic, copy) RequestSuccessBlock successBlock;
-/* 请求失败的回调 */
 @property (nonatomic, copy) RequestFailureBlock failureBlock;
+/** 设置成功回调 */
+- (void)setSuccessBlock:(RequestSuccessBlock)successBlock;
+/** 设置失败回调 */
+- (void)setFailureBlock:(RequestFailureBlock)failureBlock;
+/** 整合参数 */
+- (void)parametersWithProperties;
+/** 发送请求 */
+- (void)sendRequest;
+/** 取消请求 */
+- (void)cacelRequest;
+/** 挂起请求 */
+- (void)suspendRequest;
+/** 解析 */
+- (BaseResponse *)responseParser;
+
+#define ResponserParserGenerate(responseClassName) \
+-(BaseResponse *)responseParser{\
+if (!_responseParser) {\
+_responseParser=[[responseClassName alloc]init];\
+[_responseParser setRequest:self];\
+}\
+return _responseParser;\
+}
 
 @end

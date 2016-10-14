@@ -23,6 +23,7 @@
 		570058001D92352500CCD4C2 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 570057FA1D92352500CCD4C2 /* AFURLSessionManager.m */; };
 		570058061D92360100CCD4C2 /* BaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 570058051D92360100CCD4C2 /* BaseRequest.m */; };
 		570058091D92360E00CCD4C2 /* BaseResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 570058081D92360E00CCD4C2 /* BaseResponse.m */; };
+		5700580C1D9248D900CCD4C2 /* NetworkUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 5700580B1D9248D900CCD4C2 /* NetworkUtil.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,9 @@
 		570058051D92360100CCD4C2 /* BaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseRequest.m; sourceTree = "<group>"; };
 		570058071D92360E00CCD4C2 /* BaseResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseResponse.h; sourceTree = "<group>"; };
 		570058081D92360E00CCD4C2 /* BaseResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseResponse.m; sourceTree = "<group>"; };
+		5700580A1D9248D900CCD4C2 /* NetworkUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkUtil.h; sourceTree = "<group>"; };
+		5700580B1D9248D900CCD4C2 /* NetworkUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkUtil.m; sourceTree = "<group>"; };
+		5700580D1D924B7900CCD4C2 /* NetworkConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkConst.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +173,9 @@
 		570057E81D9233FC00CCD4C2 /* NetwokUtil */ = {
 			isa = PBXGroup;
 			children = (
+				5700580D1D924B7900CCD4C2 /* NetworkConst.h */,
+				5700580A1D9248D900CCD4C2 /* NetworkUtil.h */,
+				5700580B1D9248D900CCD4C2 /* NetworkUtil.m */,
 				570057EC1D92352500CCD4C2 /* Venders */,
 				570057E91D9233FC00CCD4C2 /* BaseRequest */,
 				570057EA1D9233FC00CCD4C2 /* BaseResponse */,
@@ -360,6 +367,7 @@
 				570057B71D92339E00CCD4C2 /* main.m in Sources */,
 				570057FD1D92352500CCD4C2 /* AFSecurityPolicy.m in Sources */,
 				570057FE1D92352500CCD4C2 /* AFURLRequestSerialization.m in Sources */,
+				5700580C1D9248D900CCD4C2 /* NetworkUtil.m in Sources */,
 				570057FF1D92352500CCD4C2 /* AFURLResponseSerialization.m in Sources */,
 				570057FB1D92352500CCD4C2 /* AFHTTPSessionManager.m in Sources */,
 				570058091D92360E00CCD4C2 /* BaseResponse.m in Sources */,
