@@ -24,6 +24,7 @@
 		570058061D92360100CCD4C2 /* BaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 570058051D92360100CCD4C2 /* BaseRequest.m */; };
 		570058091D92360E00CCD4C2 /* BaseResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 570058081D92360E00CCD4C2 /* BaseResponse.m */; };
 		5700580C1D9248D900CCD4C2 /* NetworkUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 5700580B1D9248D900CCD4C2 /* NetworkUtil.m */; };
+		5782CCF71DC97B62006A9504 /* DownloadUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 5782CCF61DC97B62006A9504 /* DownloadUtil.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,8 @@
 		5700580A1D9248D900CCD4C2 /* NetworkUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkUtil.h; sourceTree = "<group>"; };
 		5700580B1D9248D900CCD4C2 /* NetworkUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkUtil.m; sourceTree = "<group>"; };
 		5700580D1D924B7900CCD4C2 /* NetworkConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkConst.h; sourceTree = "<group>"; };
+		5782CCF51DC97B62006A9504 /* DownloadUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadUtil.h; sourceTree = "<group>"; };
+		5782CCF61DC97B62006A9504 /* DownloadUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadUtil.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +133,7 @@
 		570057B41D92339E00CCD4C2 /* NetworkUtils */ = {
 			isa = PBXGroup;
 			children = (
+				5782CCF41DC97B62006A9504 /* DownloadUtil */,
 				570057E81D9233FC00CCD4C2 /* NetwokUtil */,
 				570057B81D92339E00CCD4C2 /* AppDelegate.h */,
 				570057B91D92339E00CCD4C2 /* AppDelegate.m */,
@@ -227,6 +231,15 @@
 				570057FA1D92352500CCD4C2 /* AFURLSessionManager.m */,
 			);
 			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		5782CCF41DC97B62006A9504 /* DownloadUtil */ = {
+			isa = PBXGroup;
+			children = (
+				5782CCF51DC97B62006A9504 /* DownloadUtil.h */,
+				5782CCF61DC97B62006A9504 /* DownloadUtil.m */,
+			);
+			path = DownloadUtil;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -369,6 +382,7 @@
 				570057FE1D92352500CCD4C2 /* AFURLRequestSerialization.m in Sources */,
 				5700580C1D9248D900CCD4C2 /* NetworkUtil.m in Sources */,
 				570057FF1D92352500CCD4C2 /* AFURLResponseSerialization.m in Sources */,
+				5782CCF71DC97B62006A9504 /* DownloadUtil.m in Sources */,
 				570057FB1D92352500CCD4C2 /* AFHTTPSessionManager.m in Sources */,
 				570058091D92360E00CCD4C2 /* BaseResponse.m in Sources */,
 			);
@@ -596,6 +610,7 @@
 				570057E11D92339E00CCD4C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		570057E21D92339E00CCD4C2 /* Build configuration list for PBXNativeTarget "NetworkUtilsTests" */ = {
 			isa = XCConfigurationList;
@@ -604,6 +619,7 @@
 				570057E41D92339E00CCD4C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		570057E51D92339E00CCD4C2 /* Build configuration list for PBXNativeTarget "NetworkUtilsUITests" */ = {
 			isa = XCConfigurationList;
@@ -612,6 +628,7 @@
 				570057E71D92339E00CCD4C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
