@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "DownloadUtil.h"
 
 @interface ViewController ()
 
@@ -17,6 +18,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    NSLog(@"%@", NSHomeDirectory());
+    
+    DownloadUtil *download = [DownloadUtil shareUtil];
+    [download downloadWithUrl:@"https://codeload.github.com/HeavenYoung/NetworkUtils/zip/master" filePath:DownloadPath() downloadSuccess:^(NSURLResponse *response, NSURL *filePath) {
+        
+    } downloadFailure:^(NSURL *filePath, NSError *error) {
+        
+    } downloadProgress:^(NSProgress *progress) {
+        NSLog(@"%@", progress);
+    }];
+                              
+    
 }
 
 - (void)didReceiveMemoryWarning {

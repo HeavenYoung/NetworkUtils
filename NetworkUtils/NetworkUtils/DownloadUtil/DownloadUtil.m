@@ -63,10 +63,14 @@
     
     NSURLSessionDownloadTask *downloadTask = [manager downloadTaskWithRequest:request progress:^(NSProgress * _Nonnull downloadProgress) {
         
+        progress(downloadProgress);
+        
     } destination:^NSURL * _Nonnull(NSURL * _Nonnull targetPath, NSURLResponse * _Nonnull response) {
         
-        return [NSURL URLWithString:filePath];
-        
+        NSString *fullPath = [NSString stringWithFormat:@"%@/%@", filePath, [response suggestedFilename]];
+
+        return [NSURL fileURLWithPath:fullPath];
+            
     } completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {
         
         if (error) {

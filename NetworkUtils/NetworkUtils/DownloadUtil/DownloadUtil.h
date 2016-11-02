@@ -13,7 +13,7 @@
 #define DownloadPath() [Folder stringByAppendingPathComponent:PathNAME]
 
 typedef void(^downloadSuccessBlock)(NSURLResponse *response, NSURL *filePath);
-typedef void(^downloadFailureBlock)(NSURL *, NSError *error);
+typedef void(^downloadFailureBlock)(NSURL *filePath, NSError *error);
 typedef void(^downloadProgressBlock)(NSProgress *progress);
 
 @interface DownloadUtil : NSObject
