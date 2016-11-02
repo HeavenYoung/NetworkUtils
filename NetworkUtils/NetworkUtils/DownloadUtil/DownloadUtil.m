@@ -155,6 +155,7 @@
             break;
         }
     }
+
 }
 
 - (void)pauseAllDownload {
@@ -170,6 +171,7 @@
             [downloadTask suspend];
         }
     }
+
 }
 
 - (void)resumeDownloadWithUrl:(NSString *)downloadUrl {
@@ -189,6 +191,7 @@
             break;
         }
     }
+
 }
 
 - (void)resumeAllDownload {
@@ -203,6 +206,7 @@
             [downloadTask resume];
         }
     }
+
 }
 
 @end

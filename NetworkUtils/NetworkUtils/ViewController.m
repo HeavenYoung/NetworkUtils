@@ -22,15 +22,19 @@
     NSLog(@"%@", NSHomeDirectory());
     
     DownloadUtil *download = [DownloadUtil shareUtil];
-    [download downloadWithUrl:@"https://codeload.github.com/HeavenYoung/NetworkUtils/zip/master" filePath:DownloadPath() downloadSuccess:^(NSURLResponse *response, NSURL *filePath) {
+    [download downloadWithUrl:@"https://codeload.github.com/HeavenYoung/NetworkUtils/zip/master"
+              filePath:DownloadPath()
+     
+              downloadSuccess:^(NSURLResponse *response, NSURL *filePath) {
+              
+              }
+              downloadFailure:^(NSURL *filePath, NSError *error) {
         
-    } downloadFailure:^(NSURL *filePath, NSError *error) {
-        
-    } downloadProgress:^(NSProgress *progress) {
-        NSLog(@"%@", progress);
-    }];
-                              
-    
+              }
+              downloadProgress:^(NSProgress *progress) {
+                 NSLog(@"%@", progress);
+              }
+     ];
 }
 
 - (void)didReceiveMemoryWarning {
