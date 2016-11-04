@@ -31,8 +31,11 @@
         
         manager.securityPolicy.allowInvalidCertificates = YES;
         manager.securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
+        
+        [manager.requestSerializer willChangeValueForKey:@"timeoutInterval"];
         manager.requestSerializer.timeoutInterval = NETWORK_TIMEOUTINTERVAL;
-
+        [manager.requestSerializer didChangeValueForKey:@"timeoutInterval"];
+        
         manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",
                                                              @"text/json",
                                                              @"text/javascript",
@@ -67,7 +70,9 @@
     NSMutableString *urlString = [[NSMutableString alloc] initWithString:request.hostURLString];
     NSString *appendUrlString = [[NSString alloc] init];
     
-    self.manager.requestSerializer.timeoutInterval = request.timeoutInterval;
+    [self.manager.requestSerializer willChangeValueForKey:@"timeoutInterval"];
+    self.manager.requestSerializer.timeoutInterval = request.timeoutInterval;;
+    [self.manager.requestSerializer didChangeValueForKey:@"timeoutInterval"];
     
     if (request.URLString) {
         appendUrlString = request.URLString;
