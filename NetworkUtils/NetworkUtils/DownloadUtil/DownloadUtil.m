@@ -44,14 +44,14 @@
     return self;
 }
 
-- (void)downloadWithUrl:(NSString *)downloadUrl filePath:(NSString *)filePath downloadSuccess:(downloadSuccessBlock)success downloadFailure:(downloadFailureBlock)failure downloadProgress:(downloadProgressBlock)progress {
+- (void)downloadWithUrl:(NSString *)downloadUrl filePath:(NSString *)filePath downloadSuccess:(downloadSuccessBlock)success downloadFailure:(downloadFailureBlock)failure downloadProgress:(downloadProgressBlock)progress withIdentifier:(NSString *)identifier {
 
     // 1. 查重，防止开启多个相同文件的下载任务
     if ([_downloadUrlArray containsObject:downloadUrl]) {
         NSLog(@"此任务已经存在任务列表");
         return;
     }
-    
+
     // 2. URL处理，添加到下载URL数组
     NSURL *URL = [NSURL URLWithString:downloadUrl];
     NSURLRequest *request = [NSURLRequest requestWithURL:URL];
@@ -59,6 +59,13 @@
     
     // 3. 开启下载任务，添加到下载任务数组
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+
+    if (identifier != nil) {
+    
+        configuration = [NSURLSessionConfiguration backgroundSessionConfigurationWithIdentifier:identifier];
+
+    }
+
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
     
     NSURLSessionDownloadTask *downloadTask = [manager downloadTaskWithRequest:request progress:^(NSProgress * _Nonnull downloadProgress) {
@@ -77,14 +84,14 @@
             
             // 错误的回调
             failure(filePath, error);
-            [self removeDownloadedDataWithUrl:downloadUrl];
         } else {
             
             // 成功的回调
             success(response, filePath);
-            [self removeDownloadedDataWithUrl:downloadUrl];
         }
-        
+
+        [self removeDownloadedDataWithUrl:downloadUrl];
+//        [manager.session invalidateAndCancel];
     }];
 
     [downloadTask resume];

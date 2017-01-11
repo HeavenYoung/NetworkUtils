@@ -27,7 +27,7 @@ typedef void(^downloadProgressBlock)(NSProgress *progress);
  @param failure failure
  @param progress progress
  */
-- (void)downloadWithUrl:(NSString *)downloadUrl filePath:(NSString *)filePath downloadSuccess:(downloadSuccessBlock)success downloadFailure:(downloadFailureBlock)failure downloadProgress:(downloadProgressBlock)progress;
+- (void)downloadWithUrl:(NSString *)downloadUrl filePath:(NSString *)filePath downloadSuccess:(downloadSuccessBlock)success downloadFailure:(downloadFailureBlock)failure downloadProgress:(downloadProgressBlock)progress withIdentifier:(NSString *)Identifier;
 
 /** 单例方法 */
 + (instancetype)shareUtil;
